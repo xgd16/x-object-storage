@@ -8,7 +8,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/credentials"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/xgd16/x-object-storage/types"
-	"os"
+	"io"
 	"path/filepath"
 	"strings"
 )
@@ -39,7 +39,7 @@ func (t *AmsDrive) Init(ctx context.Context) (types.ObjectStorage, error) {
 	return t, nil
 }
 
-func (t *AmsDrive) PutObject(file *os.File, filePath string) error {
+func (t *AmsDrive) PutObject(file io.Reader, filePath string) error {
 	_, err := t.client.PutObject(t.ctx, &s3.PutObjectInput{
 		Bucket: aws.String(t.Bucket),
 		Key:    aws.String(filePath),

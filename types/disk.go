@@ -2,14 +2,14 @@ package types
 
 import (
 	"context"
-	"os"
+	"io"
 )
 
 type ObjectStorage interface {
 	// Init 初始化函数
 	Init(ctx context.Context) (ObjectStorage, error)
 	// PutObject 上传对象文件
-	PutObject(file *os.File, filePath string) error
+	PutObject(file io.Reader, filePath string) error
 	// GetPathList 获取路径列表
 	GetPathList() (ObjectInfoList, error)
 	// DelObject 删除对象
