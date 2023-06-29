@@ -1,6 +1,15 @@
 # 💾 x-object-storage 对象存储
 > 目前支持 ``AMS(亚马逊云存储)``
 
+>拉取
+
+```shell
+go get -u github.com/xgd16/x-object-storage
+```
+```shell
+go mod tidy
+```
+
 > 添加兼容项目 (需要实现以下接口函数)
 
 ```go
