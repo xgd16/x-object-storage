@@ -1,4 +1,7 @@
 # 💾 x-object-storage 对象存储
+<font size="2" color=#006666>西安豆芽科技有限公司 **制**</font>
+
+
 > 目前支持 ``AMS(亚马逊云存储)``
 
 > 拉取
